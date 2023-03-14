@@ -1,18 +1,15 @@
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Req, Res } from "@nestjs/common";
-import * as admin from 'firebase-admin';
-import { ContextIdFactory } from "@nestjs/core";
 import { Request, Response } from 'express';
 import { CreateUserProfileDto } from "./Dto/create-userprofile.dto";
 import { updateUserProfileDto } from "./Dto/update-userprofile.dto";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { UserProfileServices } from "./userprofile.services";
+
 
 @Controller('users')
 export class userProfileController{
    constructor( private readonly UserProfileServices:UserProfileServices){}
-
    // Add Traveller
    @Post('addProfile')
     async  AddProfile(
